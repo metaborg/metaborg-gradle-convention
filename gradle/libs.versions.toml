@@ -6,9 +6,6 @@ benmanesVersions                = "0.51.0"          # https://github.com/ben-man
 testlogger                      = "4.0.0"           # https://github.com/radarsh/gradle-test-logger-plugin
 gradlePublish                   = "1.2.1"           # https://plugins.gradle.org/docs/publish-plugin
 
-# Testing
-kotest                          = "5.8.0"           # https://kotest.io/ (https://github.com/kotest/kotest)
-
 
 [plugins]
 kotlin-jvm                      = { id = "org.jetbrains.kotlin.jvm",                                        version.ref = "kotlin" }
@@ -19,8 +16,4 @@ gradle-publish                  = { id = "com.gradle.plugin-publish",           
 
 
 [libraries]
-# Testing
-kotest                          = { module = "io.kotest:kotest-runner-junit5",                              version.ref = "kotest" }
-kotest-assertions               = { module = "io.kotest:kotest-assertions-core",                            version.ref = "kotest" }
-kotest-property                 = { module = "io.kotest:kotest-property",                                   version.ref = "kotest" }
-kotest-framework-datatest       = { module = "io.kotest:kotest-framework-datatest",                         version.ref = "kotest" }
+# (none)

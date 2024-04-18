@@ -4,14 +4,19 @@
 [![Maven Release][maven-release-badge]][maven-release]
 [![GitHub Release][github-release-badge]][github-release]
 
-This is a Gradle plugin that provides an opinionated configuration of Metaborg (Spoofax) projects. It is used to share common configurations between projects.
+This is a Gradle plugin that provides an opinionated configuration of Metaborg (Spoofax) projects. It is used to share common configurations between projects. It contains the following plugins:
+
+- `org.metaborg.convention.compositebuild`: Convention for composite builds.
+- `org.metaborg.convention.java`: Convention for Java and Kotlin projects using JUnit.
 
 
 ## Quick Start
-To build the project:
+To use this plugin, apply it using the `plugins` block.
 
-```shell
-./gradlew build
+```kotlin
+plugins {
+    id("org.metaborg.convention.java") version "1.0.0"
+}
 ```
 
 
