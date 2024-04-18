@@ -3,7 +3,7 @@
 gradlePipeline(
 
   gradleBuildTasks: "build",
-  gradlePublishTasks: "publish",
+  gradlePublishTasks: ":metaborg-convention-plugin:publish",
 
   mainBranch: "main",
   developBranch: "develop",
