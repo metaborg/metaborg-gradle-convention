@@ -15,15 +15,15 @@ dependencies {
 
 
 gradlePlugin {
-    website.set("https://github.com/metaborg/metaborg-gradle")
-    vcsUrl.set("https://github.com/metaborg/metaborg-gradle")
+    website.set("https://github.com/metaborg/metaborg-gradle-convention")
+    vcsUrl.set("https://github.com/metaborg/metaborg-gradle-convention")
     plugins {
         create("MetaborgCompositeBuildPlugin") {
-            id = "org.metaborg.convention.compositebuild"
+            id = "org.metaborg.gradle-convention.compositebuild"
             implementationClass = "org.metaborg.convention.MetaborgCompositeBuildPlugin"
         }
         create("MetaborgJavaPlugin") {
-            id = "org.metaborg.convention.java"
+            id = "org.metaborg.gradle-convention.java"
             implementationClass = "org.metaborg.convention.MetaborgJavaPlugin"
         }
     }

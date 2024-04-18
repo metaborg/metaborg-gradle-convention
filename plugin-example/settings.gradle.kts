@@ -1,5 +1,5 @@
 pluginManagement {
-    includeBuild("../metaborg-convention-plugin/")
+    includeBuild("../metaborg-gradle-convention-plugin/")
 }
 
 plugins {

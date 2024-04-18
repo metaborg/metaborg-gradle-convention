@@ -48,6 +48,6 @@ Thanks! :heart: :heart: :heart:
 
 The Spoofax team
 
-[1]: https://github.com/metaborg/metaborg-gradle/discussions
-[2]: https://github.com/metaborg/metaborg-gradle/issues
+[1]: https://github.com/metaborg/metaborg-gradle-convention/discussions
+[2]: https://github.com/metaborg/metaborg-gradle-convention/issues
 [3]: https://stackoverflow.com/

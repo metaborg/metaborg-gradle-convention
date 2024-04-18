@@ -4,5 +4,5 @@ plugins {
 
 rootProject.name = "metaborg-convention-project"
 
-includeBuild("metaborg-convention-plugin/")
+includeBuild("metaborg-gradle-convention-plugin/")
 includeBuild("plugin-example/")
