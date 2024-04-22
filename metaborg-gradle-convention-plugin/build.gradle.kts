@@ -37,35 +37,22 @@ publishing {
             name = "LocalDebug"
             url = uri(layout.buildDirectory.dir("repositories/localDebug"))
         }
-        if (false) {
-            maven {
-                val releasesRepoUrl = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-                val snapshotsRepoUrl = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
-                name = "MavenCentral"
-                url = if (project.extra["isReleaseVersion"] as Boolean) releasesRepoUrl else snapshotsRepoUrl
-                credentials {
-                    username = project.findProperty("ossrh.user") as String? ?: System.getenv("OSSRH_USERNAME")
-                    password = project.findProperty("ossrh.token") as String? ?: System.getenv("OSSRH_TOKEN")
-                }
+        maven {
+            val stagingRepoUrl = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+            val snapshotsRepoUrl = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+            name = "OSSRH"
+            url = if (project.extra["isReleaseVersion"] as Boolean) stagingRepoUrl else snapshotsRepoUrl
+            credentials {
+                username = project.findProperty("ossrh.user") as String? ?: System.getenv("OSSRH_USERNAME")
+                password = project.findProperty("ossrh.token") as String? ?: System.getenv("OSSRH_TOKEN")
             }
-            maven {
-                name = "GitHub"
-                url = uri("https://maven.pkg.github.com/Virtlink/kode")
-                credentials {
-                    username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
-                    password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
-                }
-            }
-            maven {
-                name = "GitLab"
-                url = uri("${System.getenv("CI_API_V4_URL")}/projects/6800/packages/maven")
-                credentials(HttpHeaderCredentials::class) {
-                    name = "Job-Token"
-                    value = System.getenv("CI_JOB_TOKEN")
-                }
-                authentication {
-                    create<HttpHeaderAuthentication>("header")
-                }
+        }
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/metaborg/metaborg-gradle-convention")
+            credentials {
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
             }
         }
         maven {
