@@ -15,7 +15,7 @@ To use this plugin, apply it using the `plugins` block.
 
 ```kotlin
 plugins {
-    id("org.metaborg.convention.java") version "1.0.0"
+    id("org.metaborg.gradle-convention.java") version "1.0.0"
 }
 ```
 
